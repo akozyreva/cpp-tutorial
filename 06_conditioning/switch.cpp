@@ -14,6 +14,11 @@ int main()
     case 14:
         std::cout << "your age is " << age << "\n";
         break;
+    // when you want to catch both cases
+    case 15:
+    case 16:
+        std::cout << "your age is " << age << "\n";
+        break;
     default:
         std::cout << "you're human\n";
         break;
