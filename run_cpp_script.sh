@@ -1,5 +1,6 @@
 #bin/bash
 clear
+rm -rf a.out
 echo "==============="
 echo "COMPLITING...."
 g++  ${1}

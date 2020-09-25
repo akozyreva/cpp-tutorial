@@ -3,19 +3,41 @@
 #include <cstdlib>
 #include <ctime>
 
+void print_guesses(int arr[], int size)
+{   
+    std::cout << "Possible guesses:\n";
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << "\t";
+    }
+    std::cout << "\n";
+}
+
+void print_count_of_tries(int attempts)
+{
+    std::cout << "Number of attempts " << attempts << "\n";
+}
+
 void play_game()
 {
     int rand_num = (rand() % 100) + 1;
+    const int kGuesseSize = 100;
+    int guesses[kGuesseSize];
     std::cout << rand_num << "\n";
     int guess_num = -1;
+    int attempt = 0;
     while (true)
     {
         std::cout << "Guess a num\n";
         std::cin >> guess_num;
+        guesses[attempt] = guess_num;
+        attempt++;
         if (guess_num == rand_num)
         {
             std::cout
                 << "You won!\n";
+            print_guesses(guesses, attempt);
+            print_count_of_tries(attempt);
             break;
         }
         else if (guess_num < rand_num)
