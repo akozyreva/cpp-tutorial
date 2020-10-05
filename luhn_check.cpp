@@ -46,7 +46,7 @@ std::string get_val_which_passed_luhn_check(std::string card_num)
 
 int main()
 {
-    std::string c_n = "51165000004052";
+    std::string c_n = "511657000004052";
     if (!luhn_check(c_n))
     {
         c_n = get_val_which_passed_luhn_check(c_n);
