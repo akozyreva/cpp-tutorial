@@ -18,17 +18,14 @@ public:
     {
         return (x == equaled.x && y == equaled.y);
     }
+    // friend allows to have an access to all members of the class!
     friend std::ostream &operator<<(std::ostream &output, const Position &pos)
     {
         output << pos.x << " " << pos.y << "\n";
         return output;
     }
-    friend std::istream &operator>>(std::istream &input, Position &pos)
-    {
-
-        input >> pos.x >> pos.y;
-        return input;
-    }
+    // better to define them in class but declare them outside
+    friend std::istream &operator>>(std::istream &input, Position &pos);
     Position()
     {
     }
@@ -38,7 +35,12 @@ public:
         this->y = y;
     }
 };
+std::istream &operator>>(std::istream &input, Position &pos)
+{
 
+    input >> pos.x >> pos.y;
+    return input;
+};
 int main()
 {
     Position pos1, pos4;
