@@ -18,11 +18,16 @@ void print_users(const std::vector<User> &users)
 // for running it 
 // g++ main.cpp user.cpp teacher.cpp   
 int main()
-{
-    Teacher teacher;
-    teacher.output();
-    // std::vector<User> users;
+{    // std::vector<User> users;
     // users.push_back(teacher);
 
     // print_users(users);
+
+    // 1- User is created
+    // 2- subclass Teacher from User is created
+    Teacher teacher;
+    teacher.output();
+    teacher.first_name = "Mike";
+    std::cout << teacher.first_name << "\n";
+   
 }
